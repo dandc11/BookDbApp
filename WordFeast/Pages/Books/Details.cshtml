@@ -1,0 +1,60 @@
+@page
+@model WordFeast.Pages.Books.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Book.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.AuthorFirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Book.AuthorFirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.AuthorLastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Book.AuthorLastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.DateRead)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Book.DateRead)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.Isbn)
+        </dt>
+        <dd>
+            <span id="isbn">
+            @Html.DisplayFor(model => model.Book.Isbn)
+            </span>
+        </dd>
+    </dl>
+</div>
+<section>
+<img src="" alt="" class="cover" />
+<p class="description"></p>
+<details>
+    <summary class="publisher"></summary>
+    <date class="publishedDate"></date>
+    <p class="pageCount"></p>
+</details>
+</section>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Book.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
