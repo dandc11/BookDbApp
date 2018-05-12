@@ -5,56 +5,34 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Book Details</h2>
+<hr />
 
-<div>
-    <h4>Book</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Book.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Book.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Book.AuthorFirstName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Book.AuthorFirstName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Book.AuthorLastName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Book.AuthorLastName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Book.DateRead)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Book.DateRead)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Book.Isbn)
-        </dt>
-        <dd>
-            <span id="isbn">
-            @Html.DisplayFor(model => model.Book.Isbn)
-            </span>
-        </dd>
-    </dl>
-</div>
 <section>
-<img src="" alt="" class="cover" />
-<p class="description"></p>
-<details>
-    <summary class="publisher"></summary>
-    <date class="publishedDate"></date>
-    <p class="pageCount"></p>
-</details>
+    <div class="book-info">
+        <h2><span class="big-title">@Html.DisplayFor(model => model.Book.Title)</span></h2>
+        <p>By  @Html.DisplayFor(model => model.Book.AuthorFirstName) @Html.DisplayFor(model => model.Book.AuthorLastName)</p>
+        <div class="details row">
+            <div class="col-sm-2"><img src="" alt="" class="cover" /></div>
+            <div class="col-sm-10">
+                <p>Read on  @Html.DisplayFor(model => model.Book.DateRead)</p>
+                <p>ISBN  <span id="isbn">@Html.DisplayFor(model => model.Book.Isbn)</span></p>
+                <p class="publisher"></p>
+                <p class="publishedDate"></p>
+                <p class="pageCount"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="description"></p>
+            </div>
+        </div>
+    </div>
+
+
 </section>
+<br />
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Book.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="../Index">Back to List</a>
 </div>

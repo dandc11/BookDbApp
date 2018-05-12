@@ -36,7 +36,7 @@ namespace WordFeast.Pages.Books
             _context.Book.Add(Book);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
         }
     }
 }

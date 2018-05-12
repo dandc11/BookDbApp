@@ -52,7 +52,7 @@ namespace WordFeast.Pages.Books
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
         }
     }
 }

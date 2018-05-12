@@ -1,35 +1,219 @@
+@import "https://fonts.googleapis.com/css?family=Merriweather:400,700|Oleo+Script:400,700";
+
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 18px;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+
+.navbar {
+    padding: 15px 10px;
+    background: #000;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
     width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+/* ---------------------------------------------------
+    BOOK DETAILS DISPLAY STYLE
+----------------------------------------------------- */
+
+.cover {
+    display: flex;
+    align-content: flex-start;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
+.book-info {
+    
+}
+
+.details {
+    align-content: flex-end;
+    margin: 20px 20px 20px 0;
+}
+
+.big-title {
+    font-size: 50px;
+    color: #000000;
+    letter-spacing: .05em;
+    text-shadow: 2px 2px 0px #575757, 2px 2px 0px rgba(169, 162, 150, 1);
+}
+
+.dl-horizontal dt {
+    width: 200px;
+    margin-right: 20px;
+}
+/* ---------------------------------------------------
+    SEARCH MODAL STYLE
+----------------------------------------------------- */
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#logo {
+    min-width: 225px;
+    max-width: 225px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #77674c;
+    font-family: 'Oleo Script', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    transition: all 0.5s;
+}
+
+#sidebar.active {
+        margin-left: -250px;
+    }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+        background: #77674c;
+    }
+
+    #sidebar ul.components {
+        padding: 20px 0;
+        border-bottom: 1px solid #77674c;
+    }
+
+    #sidebar ul p {
+        color: #77674c;
+        padding: 10px;
+    }
+
+#sidebar ul li a {
+        padding: 10px;
+        font-size: 1.1em;
+        display: block;
+    }
+
+    #sidebar ul li a:hover {
+        color: #000;
+        background: #62553f;
+    }
+
+    #sidebar ul li.active > a, a[aria-expanded="true"] {
+        color: #000;
+        background: #62553f;
+    }
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #62553f;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+a.article, a.article:hover {
+    background: #62553f !important;
+    color: #000 !important;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    min-height: 100vh;
+}
+
+    #content::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.5s;
+        background: radial-gradient( rgba(197, 193, 185, 1), rgba(197, 193, 185, 0.4)),
+            url(../images/alexandre-godreau-445969-unsplash.jpg)
+    }
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+        #sidebar.active {
+            margin-left: 0;
+        }
+
+    #sidebarCollapse span {
         display: none;
     }
 }
+

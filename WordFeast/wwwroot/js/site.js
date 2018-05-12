@@ -1,17 +1,21 @@
 ﻿
-// onload   var isbn = $('#isbn').text();  
+// onload   
 $(document).ready(function () {
 
-    var div = document.getElementById('isbn')
-    var isbn = div.innerText;
+    $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+     });
 
+    var div = document.getElementById('isbn');
+    var isbn = div.innerText; //use innerText rather than innerHTML for getting text w/o escape sequences
 
+    //request book based on isbn
     $.ajax({
         dataType: 'json',
-        url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn, //hitting the isbn directly works; something about getting the div changes it
+        url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn,
         success: showBook
     });
-
+    //put the book info in the appropriate spots
     function showBook(response) {
         $.each(response.items, function (i, item) {
 
