@@ -1,10 +1,17 @@
 # BookDbApp
-This was an early app build with Microsoft's RazorPages. It lets users keep track of the books they've read, similar to GoodReads. Working on it gave me a chance to improve with full stack development, including:
+This was an experiment with Microsoft's RazorPages built several years ago, when I was first learning web dev. It allows users keep track of the books they've read, similar to GoodReads, and presents that data with a bit of gloss and detail from the the Google Books API. 
 
 - ASP.NET
 - C#
 - SQL Server
 - Bootstrap
-- Vanilla Javascript
+- JS
+- jQuery
 - CSS
-- APIs
+- Google Books API
+
+![image](https://user-images.githubusercontent.com/34725981/148690978-c1f1498c-1ba5-4a0b-95e6-383c4c5f3f8d.png)
+
+
+![image](https://user-images.githubusercontent.com/34725981/148690944-af4370ce-a2b3-49b7-a2e9-4aa97439ed95.png)
+
